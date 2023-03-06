@@ -58,13 +58,13 @@ SELECT c.Refund_No, u.First_Name, u.Last_Name, r.Restaurant_Name, m.Menu_Item, c
         JOIN Menu m ON od.Menu_Item_ID = m.Menu_Item_ID
             ORDER BY c.Refund_No;
 
-Q5. Display the restaurant's name and ID that sells Big Mac?
+Q5. Display the restaurant's name and ID that sells Big Mac? Steve
 SELECT r.Restaurant_ID, r.Restaurant_Name
     FROM menu m
         INNER JOIN restaurant r ON m.Restaurant_ID = r.Restaurant_ID
             WHERE m.Menu_Item = 'Big Mac';
 
-Q6. Get driver who has most delivey orders?
+Q6. Get driver who has most delivey orders? Steve
 SELECT d.Driver_ID, d.First_Name, d.Last_Name, COUNT(Order_ID)
     FROM orders o
         INNER JOIN driver d 
@@ -73,7 +73,7 @@ SELECT d.Driver_ID, d.First_Name, d.Last_Name, COUNT(Order_ID)
                 ORDER BY COUNT(Order_ID) DESC
                 LIMIT 1;
                 
-Q7: Join the Delivery table to itself to find deliveries that were made by the same driver:
+Q7: Join the Delivery table to itself to find deliveries that were made by the same driver: Steve
 SELECT d1.Delivery_ID, d1.Driver_ID, d2.Delivery_ID, d2.Driver_ID
         FROM Delivery d1
             JOIN Delivery d2 ON d1.Driver_ID = d2.Driver_ID
