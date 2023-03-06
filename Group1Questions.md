@@ -72,6 +72,12 @@ SELECT d.Driver_ID, d.First_Name, d.Last_Name, COUNT(Order_ID)
                 GROUP BY Driver_ID
                 ORDER BY COUNT(Order_ID) DESC
                 LIMIT 1;
+                
+Q7: Join the Delivery table to itself to find deliveries that were made by the same driver:
+SELECT d1.Delivery_ID, d1.Driver_ID, d2.Delivery_ID, d2.Driver_ID
+        FROM Delivery d1
+            JOIN Delivery d2 ON d1.Driver_ID = d2.Driver_ID
+                WHERE d1.Delivery_ID < d2.Delivery_ID;
 
 Q8. Get the top-rated drivers, along with their average rating?
 SELECT d.First_Name, d.Last_Name, AVG(r.Driver_Rating) AS Average_Rating
