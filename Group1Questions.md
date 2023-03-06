@@ -58,13 +58,13 @@ SELECT c.Refund_No, u.First_Name, u.Last_Name, r.Restaurant_Name, m.Menu_Item, c
         JOIN Menu m ON od.Menu_Item_ID = m.Menu_Item_ID
             ORDER BY c.Refund_No;
 
-Q5. Display the restaurant's name and ID that sells Big Mac?
+Q5. Display the restaurant's name and ID that sells Big Mac? Steve
 SELECT r.Restaurant_ID, r.Restaurant_Name
     FROM menu m
         INNER JOIN restaurant r ON m.Restaurant_ID = r.Restaurant_ID
             WHERE m.Menu_Item = 'Big Mac';
 
-Q6. Get driver who has most delivey orders?
+Q6. Get driver who has most delivey orders? Steve
 SELECT d.Driver_ID, d.First_Name, d.Last_Name, COUNT(Order_ID)
     FROM orders o
         INNER JOIN driver d 
@@ -73,11 +73,13 @@ SELECT d.Driver_ID, d.First_Name, d.Last_Name, COUNT(Order_ID)
                 ORDER BY COUNT(Order_ID) DESC
                 LIMIT 1;
                 
-Q13 Join the User table to itself to find users who have the same contact email address. Steve
+
+Q7 Join the User table to itself to find users who have the same contact email address. Steve
 SELECT u1.User_ID, u1.Contact_Email_Address, u2.User_ID, u2.Contact_Email_Address
     FROM User u1
         JOIN User u2 ON u1.Contact_Email_Address = u2.Contact_Email_Address
         WHERE u1.User_ID < u2.User_ID;
+
 
 Q8. Get the top-rated drivers, along with their average rating?
 SELECT d.First_Name, d.Last_Name, AVG(r.Driver_Rating) AS Average_Rating
