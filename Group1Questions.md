@@ -81,14 +81,14 @@ SELECT d.First_Name, d.Last_Name, AVG(r.Driver_Rating) AS Average_Rating
             ORDER BY Average_Rating DESC
             LIMIT 5;
 
--- Q9. Get the total number of orders made by each restaurant, along with their address?
+Q9. Get the total number of orders made by each restaurant, along with their address?
 SELECT r.Restaurant_Name, r.Restaurant_Address, COUNT(o.Order_ID) AS Total_Orders
     FROM Restaurant r
         JOIN Orders o ON r.Restaurant_ID = o.Restaurant_ID
             GROUP BY r.Restaurant_ID 
             ORDER BY Order_ID desc;
 
--- Q10. Get all items ordered, their prices, and amount of times it was ordered?
+Q10. Get all items ordered, their prices, and amount of times it was ordered?
 SELECT o.Order_ID, m.Menu_Item, m.Item_Price, od.Item_Amount
     FROM Orders o
         JOIN User u ON o.User_ID = u.User_ID
