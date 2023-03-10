@@ -19,7 +19,7 @@ Q1. Find the orders where the driver delivered faster than 20 minutes with drive
                          WHERE TIMEDIFF(delivery.DropOff_Time, delivery.Driver_Pickup_Time) < "00:20:00"
                             ORDER BY Delivery_Time ASC;
                         
-![](img/fcbj.png)
+![](img/fcbj .png)
 
 Q2.  HIghest tip amount per month? Adam
 
