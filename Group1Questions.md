@@ -2,14 +2,13 @@
 
 By Adam, Kevin Soo, Steve(Chauche)
 
-##Phase 3
+## Phase 3
 
 
 
 Q1. Find the orders where the driver delivered faster than 20 minutes with driver name? Adam
 
 SELECT orders.Order_ID, 
-
     driver.First_Name AS driver_Name,
     TIMEDIFF(delivery.DropOff_Time, delivery.Driver_Pickup_Time) AS Delivery_Time
         FROM delivery
@@ -20,9 +19,10 @@ SELECT orders.Order_ID,
                      WHERE TIMEDIFF(delivery.DropOff_Time, delivery.Driver_Pickup_Time) < "00:20:00"
                         ORDER BY Delivery_Time ASC;
                         
-![](img/Door%20Dash%20DFD.jpg)
+![](img/fcbj.png)
 
 Q2.  HIghest tip amount per month? Adam
+
 SELECT 
     CONCAT(d.First_Name, ' ', d.Last_Name) AS Driver_Name, 
     DATE_FORMAT(o.Date_And_Time, '%M %Y') AS Month_Year, 
@@ -38,9 +38,10 @@ SELECT
                         Month_Year DESC, 
                         Highest_Tip_Amount DESC;
                         
- ![](img/Door%20Dash%20DFD.jpg)
+ ![](img/image.png)
 
 Q3 Merge the tables to show orders with names instead of ids, and have tips, items order, item price, tip and delivery charge? Adam?
+
 SELECT 
   o.Order_ID, 
   CONCAT(u.First_Name, ' ', u.Last_Name) AS User_Name, 
@@ -65,6 +66,7 @@ SELECT
 
 
 Q4. Match the complaint from the customer to match the resturant item to resturant name? Adam
+
 SELECT c.Refund_No, u.First_Name, u.Last_Name, r.Restaurant_Name, m.Menu_Item, c.Reason_Of_Refund_Comment_Box
     FROM Customer_Service c
         JOIN User u ON c.User_ID = u.User_ID
