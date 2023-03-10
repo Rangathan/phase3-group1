@@ -62,7 +62,7 @@ Q3 Merge the tables to show orders with names instead of ids, and have tips, ite
                         JOIN Menu m ON od.Menu_Item_ID = m.Menu_Item_ID
                         limit 5;
  
- ![](img/Door%20Dash%20DFD.jpg)
+ ![](img/Q3.png)
 
 
 
@@ -77,7 +77,7 @@ Q4. Match the complaint from the customer to match the resturant item to restura
             JOIN Menu m ON od.Menu_Item_ID = m.Menu_Item_ID
                 ORDER BY c.Refund_No;
 
-![](img/Door%20Dash%20DFD.jpg)
+![](img/Q4.png)
 
 Q5. Display the restaurant's name and ID that sells Big Mac? Steve
     
