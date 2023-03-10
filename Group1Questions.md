@@ -105,30 +105,33 @@ SELECT u1.User_ID, u1.Contact_Email_Address, u2.User_ID, u2.Contact_Email_Addres
 
 ![](img/Door%20Dash%20DFD.jpg)
 
-Q8. Get the top-rated drivers, along with their average rating?
-SELECT d.First_Name, d.Last_Name, AVG(r.Driver_Rating) AS Average_Rating
-    FROM Driver d
-        JOIN Rating r ON d.Driver_ID = r.Driver_ID
-            GROUP BY d.Driver_ID
-            ORDER BY Average_Rating DESC
-            LIMIT 5;
+Q8. Get the top-rated drivers, along with their average rating? Kevin
+
+    SELECT d.First_Name, d.Last_Name, AVG(r.Driver_Rating) AS Average_Rating
+        FROM Driver d
+            JOIN Rating r ON d.Driver_ID = r.Driver_ID
+                GROUP BY d.Driver_ID
+                ORDER BY Average_Rating DESC
+                LIMIT 5;
 
 ![](img/Door%20Dash%20DFD.jpg)
 
-Q9. Get the total number of orders made by each restaurant, along with their address?
-SELECT r.Restaurant_Name, r.Restaurant_Address, COUNT(o.Order_ID) AS Total_Orders
-    FROM Restaurant r
-        JOIN Orders o ON r.Restaurant_ID = o.Restaurant_ID
-            GROUP BY r.Restaurant_ID 
-            ORDER BY Order_ID desc;
+Q9. Get the total number of orders made by each restaurant, along with their address? Kevin
+
+    SELECT r.Restaurant_Name, r.Restaurant_Address, COUNT(o.Order_ID) AS Total_Orders
+        FROM Restaurant r
+            JOIN Orders o ON r.Restaurant_ID = o.Restaurant_ID
+                GROUP BY r.Restaurant_ID 
+                ORDER BY Order_ID desc;
 
 ![](img/Door%20Dash%20DFD.jpg)
 
-Q10. Get all items ordered, their prices, and amount of times it was ordered?
-SELECT o.Order_ID, m.Menu_Item, m.Item_Price, od.Item_Amount
-    FROM Orders o
-        JOIN User u ON o.User_ID = u.User_ID
-        JOIN order_details od ON o.Order_ID = od.Order_ID
-        JOIN Menu m ON od.Menu_Item_ID = m.Menu_Item_ID;
+Q10. Get all items ordered, their prices, and amount of times it was ordered? Kevin
+
+    SELECT o.Order_ID, m.Menu_Item, m.Item_Price, od.Item_Amount
+        FROM Orders o
+            JOIN User u ON o.User_ID = u.User_ID
+            JOIN order_details od ON o.Order_ID = od.Order_ID
+            JOIN Menu m ON od.Menu_Item_ID = m.Menu_Item_ID;
 
 ![](img/Door%20Dash%20DFD.jpg)
