@@ -7,7 +7,9 @@ By Adam, Kevin Soo, Steve(Chauche)
 
 
 Q1. Find the orders where the driver delivered faster than 20 minutes with driver name? Adam
+
 SELECT orders.Order_ID, 
+
     driver.First_Name AS driver_Name,
     TIMEDIFF(delivery.DropOff_Time, delivery.Driver_Pickup_Time) AS Delivery_Time
         FROM delivery
