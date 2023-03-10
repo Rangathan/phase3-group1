@@ -19,7 +19,7 @@ Q1. Find the orders where the driver delivered faster than 20 minutes with drive
                          WHERE TIMEDIFF(delivery.DropOff_Time, delivery.Driver_Pickup_Time) < "00:20:00"
                             ORDER BY Delivery_Time ASC;
                         
-![](img/fcbj.png)
+![](img/fcb.png)
 
 Q2.  HIghest tip amount per month? Adam
 
@@ -86,7 +86,7 @@ Q5. Display the restaurant's name and ID that sells Big Mac? Steve
             INNER JOIN restaurant r ON m.Restaurant_ID = r.Restaurant_ID
                 WHERE m.Menu_Item = 'Big Mac';
 
-![](img/nbfasjnbkf.png)
+![](img/Door%20Dash%20DFD.jpg)
 
 Q6. Get driver who has most delivey orders? Steve
     
@@ -98,7 +98,7 @@ Q6. Get driver who has most delivey orders? Steve
                     ORDER BY COUNT(Order_ID) DESC
                     LIMIT 1;
   
- ![](img/ndf.png)
+ ![](img/Door%20Dash%20DFD.jpg)
 
 Q7 Join the User table to itself to find users who have the same contact email address. Steve
     
