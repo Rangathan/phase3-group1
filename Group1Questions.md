@@ -1,3 +1,11 @@
+# Food Delivery App
+
+By Adam, Kevin Soo, Steve(Chauche)
+
+##Phase 3
+
+
+
 Q1. Find the orders where the driver delivered faster than 20 minutes with driver name? Adam
 SELECT orders.Order_ID, 
     driver.First_Name AS driver_Name,
@@ -9,6 +17,8 @@ SELECT orders.Order_ID,
                 ON driver.Driver_ID = orders.Driver_ID
                      WHERE TIMEDIFF(delivery.DropOff_Time, delivery.Driver_Pickup_Time) < "00:20:00"
                         ORDER BY Delivery_Time ASC;
+                        
+![](img/Door%20Dash%20DFD.jpg)
 
 Q2.  HIghest tip amount per month? Adam
 SELECT 
@@ -25,6 +35,8 @@ SELECT
                         ORDER BY 
                         Month_Year DESC, 
                         Highest_Tip_Amount DESC;
+                        
+ ![](img/Door%20Dash%20DFD.jpg)
 
 Q3 Merge the tables to show orders with names instead of ids, and have tips, items order, item price, tip and delivery charge? Adam?
 SELECT 
@@ -44,7 +56,9 @@ SELECT
             JOIN Driver d ON o.Driver_ID = d.Driver_ID 
                 JOIN Restaurant r ON o.Restaurant_ID = r.Restaurant_ID 
                     JOIN order_details od ON o.Order_ID = od.Order_ID 
-                        JOIN Menu m ON od.Menu_Item_ID = m.Menu_Item_ID;
+                        JOIN Menu m ON od.Menu_Item_ID = m.Menu_Item_ID
+                        limit 5;
+ ![](img/Door%20Dash%20DFD.jpg)
 
 
 
@@ -58,11 +72,15 @@ SELECT c.Refund_No, u.First_Name, u.Last_Name, r.Restaurant_Name, m.Menu_Item, c
         JOIN Menu m ON od.Menu_Item_ID = m.Menu_Item_ID
             ORDER BY c.Refund_No;
 
+![](img/Door%20Dash%20DFD.jpg)
+
 Q5. Display the restaurant's name and ID that sells Big Mac? Steve
 SELECT r.Restaurant_ID, r.Restaurant_Name
     FROM menu m
         INNER JOIN restaurant r ON m.Restaurant_ID = r.Restaurant_ID
             WHERE m.Menu_Item = 'Big Mac';
+
+![](img/Door%20Dash%20DFD.jpg)
 
 Q6. Get driver who has most delivey orders? Steve
 SELECT d.Driver_ID, d.First_Name, d.Last_Name, COUNT(Order_ID)
@@ -72,7 +90,8 @@ SELECT d.Driver_ID, d.First_Name, d.Last_Name, COUNT(Order_ID)
                 GROUP BY Driver_ID
                 ORDER BY COUNT(Order_ID) DESC
                 LIMIT 1;
-                
+  
+ ![](img/Door%20Dash%20DFD.jpg)
 
 Q7 Join the User table to itself to find users who have the same contact email address. Steve
 SELECT u1.User_ID, u1.Contact_Email_Address, u2.User_ID, u2.Contact_Email_Address
@@ -80,6 +99,7 @@ SELECT u1.User_ID, u1.Contact_Email_Address, u2.User_ID, u2.Contact_Email_Addres
         JOIN User u2 ON u1.Contact_Email_Address = u2.Contact_Email_Address
         WHERE u1.User_ID < u2.User_ID;
 
+![](img/Door%20Dash%20DFD.jpg)
 
 Q8. Get the top-rated drivers, along with their average rating?
 SELECT d.First_Name, d.Last_Name, AVG(r.Driver_Rating) AS Average_Rating
@@ -89,6 +109,8 @@ SELECT d.First_Name, d.Last_Name, AVG(r.Driver_Rating) AS Average_Rating
             ORDER BY Average_Rating DESC
             LIMIT 5;
 
+![](img/Door%20Dash%20DFD.jpg)
+
 Q9. Get the total number of orders made by each restaurant, along with their address?
 SELECT r.Restaurant_Name, r.Restaurant_Address, COUNT(o.Order_ID) AS Total_Orders
     FROM Restaurant r
@@ -96,9 +118,13 @@ SELECT r.Restaurant_Name, r.Restaurant_Address, COUNT(o.Order_ID) AS Total_Order
             GROUP BY r.Restaurant_ID 
             ORDER BY Order_ID desc;
 
+![](img/Door%20Dash%20DFD.jpg)
+
 Q10. Get all items ordered, their prices, and amount of times it was ordered?
 SELECT o.Order_ID, m.Menu_Item, m.Item_Price, od.Item_Amount
     FROM Orders o
         JOIN User u ON o.User_ID = u.User_ID
         JOIN order_details od ON o.Order_ID = od.Order_ID
         JOIN Menu m ON od.Menu_Item_ID = m.Menu_Item_ID;
+
+![](img/Door%20Dash%20DFD.jpg)
