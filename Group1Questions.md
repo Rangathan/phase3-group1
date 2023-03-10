@@ -80,29 +80,32 @@ Q4. Match the complaint from the customer to match the resturant item to restura
 ![](img/Door%20Dash%20DFD.jpg)
 
 Q5. Display the restaurant's name and ID that sells Big Mac? Steve
-SELECT r.Restaurant_ID, r.Restaurant_Name
-    FROM menu m
-        INNER JOIN restaurant r ON m.Restaurant_ID = r.Restaurant_ID
-            WHERE m.Menu_Item = 'Big Mac';
+    
+    SELECT r.Restaurant_ID, r.Restaurant_Name
+        FROM menu m
+            INNER JOIN restaurant r ON m.Restaurant_ID = r.Restaurant_ID
+                WHERE m.Menu_Item = 'Big Mac';
 
 ![](img/Door%20Dash%20DFD.jpg)
 
 Q6. Get driver who has most delivey orders? Steve
-SELECT d.Driver_ID, d.First_Name, d.Last_Name, COUNT(Order_ID)
-    FROM orders o
-        INNER JOIN driver d 
-            ON d.Driver_ID = o.Driver_ID
-                GROUP BY Driver_ID
-                ORDER BY COUNT(Order_ID) DESC
-                LIMIT 1;
+    
+    SELECT d.Driver_ID, d.First_Name, d.Last_Name, COUNT(Order_ID)
+        FROM orders o
+            INNER JOIN driver d 
+                ON d.Driver_ID = o.Driver_ID
+                    GROUP BY Driver_ID
+                    ORDER BY COUNT(Order_ID) DESC
+                    LIMIT 1;
   
  ![](img/Door%20Dash%20DFD.jpg)
 
 Q7 Join the User table to itself to find users who have the same contact email address. Steve
-SELECT u1.User_ID, u1.Contact_Email_Address, u2.User_ID, u2.Contact_Email_Address
-    FROM User u1
-        JOIN User u2 ON u1.Contact_Email_Address = u2.Contact_Email_Address
-        WHERE u1.User_ID < u2.User_ID;
+    
+    SELECT u1.User_ID, u1.Contact_Email_Address, u2.User_ID, u2.Contact_Email_Address
+        FROM User u1
+            JOIN User u2 ON u1.Contact_Email_Address = u2.Contact_Email_Address
+            WHERE u1.User_ID < u2.User_ID;
 
 ![](img/Door%20Dash%20DFD.jpg)
 
