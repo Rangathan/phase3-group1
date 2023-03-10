@@ -118,7 +118,7 @@ Q8. Get the top-rated drivers, along with their average rating? Kevin
                 ORDER BY Average_Rating DESC
                 LIMIT 5;
 
-![](img/Door%20Dash%20DFD.jpg)
+![](img/Q8.png)
 
 Q9. Get the total number of orders made by each restaurant, along with their address? Kevin
 
@@ -128,7 +128,7 @@ Q9. Get the total number of orders made by each restaurant, along with their add
                 GROUP BY r.Restaurant_ID 
                 ORDER BY Order_ID desc;
 
-![](img/Door%20Dash%20DFD.jpg)
+![](img/Q9.png)
 
 Q10. Get all items ordered, their prices, and amount of times it was ordered? Kevin
 
@@ -138,4 +138,4 @@ Q10. Get all items ordered, their prices, and amount of times it was ordered? Ke
             JOIN order_details od ON o.Order_ID = od.Order_ID
             JOIN Menu m ON od.Menu_Item_ID = m.Menu_Item_ID;
 
-![](img/Door%20Dash%20DFD.jpg)
+![](img/Q10.png)
