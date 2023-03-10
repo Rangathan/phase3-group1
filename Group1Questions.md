@@ -107,7 +107,7 @@ Q7 Join the User table to itself to find users who have the same contact email a
             JOIN User u2 ON u1.Contact_Email_Address = u2.Contact_Email_Address
             WHERE u1.User_ID < u2.User_ID;
 
-![](img/Door%20Dash%20DFD.jpg)
+![](img/Q7.png)
 
 Q8. Get the top-rated drivers, along with their average rating? Kevin
 
